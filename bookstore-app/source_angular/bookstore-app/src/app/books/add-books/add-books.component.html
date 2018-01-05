@@ -1,0 +1,53 @@
+<h3>Add Books</h3>
+<form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+  <div class="form-group">
+    <label for="title">Title:</label>
+    <input type="text" class="form-control" name="title" [(ngModel)]='title' required>
+  </div>
+  <div class="form-group">
+    <label for="author">Author:</label>
+    <input type="text" class="form-control" name="author" [(ngModel)]='author' required>
+  </div>
+
+<div class="form-group">
+    <label for="isbn">ISBN:</label>
+    <input type="text" class="form-control" id="isbn" name="isbn" [(ngModel)]='isbn' required>
+  </div>
+  
+  <div class="form-group">
+    <label for="publication_date">Publication Date:</label>
+    <input type="date" class="form-control" id="publication_date" name="publication_date" [(ngModel)]='publication_date' required>
+  </div>
+
+<div class="form-group">
+    <label for="publisher">Publisher:</label>
+    <input type="text" class="form-control" id="publisher" name="publisher" [(ngModel)]='publisher' required>
+  </div>
+
+
+  <div class="form-group">
+    <label for="pwd">Genre:</label>
+    <select class="form-control" name="genre" [ngModel]="genre_arr[0]">
+        <option *ngFor="let gen of genre_arr" [value]="gen">
+          {{gen}}
+        </option>
+      </select>
+      <br>
+  
+  <div class="form-group">
+    <label for="pwd">Format:</label>
+    <select class="form-control" name="format" [ngModel]="format_arr[0]">
+        <option *ngFor="let form of format_arr" [value]="form">
+          {{form}}
+        </option>
+      </select>
+  </div>
+
+  </div>
+    <div class="form-group">
+    <label for="pwd">Price:</label>
+    <input type="number" class="form-control" name="price" [(ngModel)]='price' required>
+  </div>
+
+  <button type="submit" class="btn btn-default" [disabled]="formRef.invalid">Submit</button>
+</form>

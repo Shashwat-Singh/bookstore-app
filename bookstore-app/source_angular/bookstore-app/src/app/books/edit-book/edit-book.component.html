@@ -1,0 +1,52 @@
+<div class="container">
+  <h1>Edit Book</h1>
+   <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+          <div class="form-group">
+    <label for="title">Title:</label>
+    <input type="text" class="form-control" id="title" name="title" [(ngModel)]="book.title">
+  </div>
+
+  <div class="form-group">
+    <label for="author">Author:</label>
+    <input type="text" class="form-control" id="author" name="author" [(ngModel)]='book.author'>
+  </div>
+
+<div class="form-group">
+    <label for="isbn">ISBN:</label>
+    <input type="text" class="form-control" id="isbn" name="isbn" [(ngModel)]='book.isbn'>
+  </div>
+  
+  <div class="form-group">
+    <label for="publication_date">Publication Date:</label>
+    <input type="date" class="form-control" id="publication_date" name="publication_date" [(ngModel)]='book.publication_date'>
+  </div>
+
+<div class="form-group">
+    <label for="publisher">Publisher:</label>
+    <input type="text" class="form-control" id="publisher" name="publisher" [(ngModel)]='book.publisher'>
+  </div>
+
+  <div class="form-group">
+  <label for="price">Price:</label>
+    <input type="number" class="form-control" id="price" name="price" [(ngModel)]='book.price'>
+  </div>
+  
+  <div class="form-group">
+    <label for="price">Genre:</label>
+  <select class="form-control" name="genre" [(ngModel)]="book.genre">
+        <option *ngFor="let gen of genre_arr" [value]="gen">
+          {{gen}}
+        </option>
+      </select>
+  </div>
+  <div class="form-group">
+  <label for="price">Format:</label>
+    <select class="form-control" name="format" [(ngModel)]="book.format">
+        <option *ngFor="let form of format_arr" [value]="form">
+          {{form}}
+        </option>
+      </select>
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+</div>

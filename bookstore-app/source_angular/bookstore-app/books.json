@@ -1,0 +1,20 @@
+[
+{
+    id:1,
+    title:"Harry Potter",
+    author:"JK Rowling",
+    price:333,
+    format:"paperback",
+    genre:"fiction"
+
+},
+{
+    
+    id:2,
+    title:"And then there were none",
+    author:"Agatha Christie",
+    price:233,
+    format:"hardbound",
+    genre:"Murder Mystery"
+}
+]
